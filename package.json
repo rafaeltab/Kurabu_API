@@ -1,0 +1,21 @@
+{
+  "name": "Kurabu_API",
+  "version": "1.0.0",
+  "description": "Recreating IMAL_API from the ground up with kubernetes in mind",
+  "scripts": {
+    "gate": "cd Gateway && npm run start-dev",
+    "auth": "cd AuthService && npm run start-dev",
+    "media": "cd MediaService && npm run start-dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rafaeltab/Kurabu_API.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rafaeltab/Kurabu_API/issues"
+  },
+  "homepage": "https://github.com/rafaeltab/Kurabu_API#readme"
+}
