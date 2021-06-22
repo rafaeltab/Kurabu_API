@@ -10,6 +10,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const GeneralError_1 = require("../errors/GeneralError");
+const logging_1 = require("../logging");
 function RequestHandlerDecorator(log = true) {
     return function (target, key, descriptor) {
         const original = descriptor.value;
@@ -39,7 +40,7 @@ function RequestHandlerDecorator(log = true) {
                             message: "unknown error",
                         });
                         if (log)
-                            console.log(err);
+                            logging_1.Logger.Info(err);
                     }
                 }
             });

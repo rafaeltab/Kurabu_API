@@ -1,6 +1,6 @@
 {
   "name": "kurabu-lib",
-  "version": "1.0.8",
+  "version": "1.0.26",
   "description": "",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -8,13 +8,16 @@
     "/dist"
   ],
   "scripts": {
-    "publishnpm": "tsc && grunt bump && npm publish"
+    "removedist": "rmdir /s /q \"./dist\" ",
+    "publishnpm": "npm run removedist && tsc && grunt bump && npm publish"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@overnightjs/core": "^1.7.6",
     "@overnightjs/logger": "^1.2.1",
+    "@types/express": "^4.17.12",
     "@types/node": "^15.12.3",
     "@types/node-fetch": "^2.5.10",
     "express": "^4.17.1",

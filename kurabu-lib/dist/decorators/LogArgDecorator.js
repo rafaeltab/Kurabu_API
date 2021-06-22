@@ -11,15 +11,15 @@ var __rest = (this && this.__rest) || function (s, e) {
     return t;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const logger_1 = require("@overnightjs/logger");
 const GeneratedCodes_1 = require("../crypto/GeneratedCodes");
+const logging_1 = require("../logging");
 function LogArg() {
     return function (target, key, descriptor) {
         const original = descriptor.value;
         descriptor.value = function (req, res, arg = {}) {
             const requestCode = GeneratedCodes_1.getUUID();
             const { user } = arg, logArg = __rest(arg, ["user"]);
-            logger_1.Logger.Info(`${requestCode} ${target.constructor.name}: ${JSON.stringify(logArg, null, 2)}`);
+            logging_1.Logger.Info(`${requestCode} ${target.constructor.name}: ${JSON.stringify(logArg, null, 2)}`);
             let val = original.apply(this, [req, res, arg]);
             return val;
         };

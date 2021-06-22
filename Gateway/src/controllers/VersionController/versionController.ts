@@ -1,13 +1,24 @@
-import { Request, Response } from "express";
-import { Controller, Get } from "@overnightjs/core";
-import * as Options from "./versionControllerOptions";
-import { injectable } from "tsyringe";
-import { Requests, Decorators } from "kurabu-lib";
-import version from "#root/version";
+import version from '#root/version';
+import {
+  Request,
+  Response,
+} from 'express';
+import {
+  Decorators,
+  Requests,
+} from 'kurabu-lib';
+import { injectable } from 'tsyringe';
+
+import {
+  Controller,
+  Get,
+} from '@overnightjs/core';
+
+import * as Options from './VersionControllerOptions';
 
 @Controller(Options.ControllerPath)
 @injectable()
-export class versionController {
+export class VersionController {
     @Get(Options.ControllerName)
     @Decorators.RequestHandler()
     @Decorators.LogArg()

@@ -1,6 +1,10 @@
-import { Request, Response } from "express";
-import { Logger } from "@overnightjs/logger";
-import { getUUID } from "../crypto/GeneratedCodes";
+import {
+  Request,
+  Response,
+} from 'express';
+
+import { getUUID } from '../crypto/GeneratedCodes';
+import { Logger } from '../logging';
 
 export default function LogArg() {
     return function (

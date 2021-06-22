@@ -11,6 +11,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Verify = exports.hash = void 0;
 const crypto = require("crypto");
+const logging_1 = require("../logging");
 const Encrypter_1 = require("./Encrypter");
 const digest = "sha512";
 function iters(iterations) {
@@ -55,7 +56,7 @@ function Verify(password, hashed, keyPass) {
                 resolve(keyA.compare(keyB) == 0);
             }
             catch (err) {
-                console.log("Maybe wrong key was used for Verifyieng :/");
+                logging_1.Logger.Info("Maybe wrong key was used for Verifyieng :/");
                 resolve(false);
             }
         });

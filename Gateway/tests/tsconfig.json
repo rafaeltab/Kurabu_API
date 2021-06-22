@@ -1,0 +1,25 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "strict": true,
+        "outDir": "build",
+        "removeComments": true,
+        "experimentalDecorators": true,
+        "target": "es6",
+        "emitDecoratorMetadata": true,
+        "moduleResolution": "node",
+        "importHelpers": true,
+        "sourceMap": true,
+        "types": ["node", "mocha"],
+        "typeRoots": ["node_modules/@types"],
+        "baseUrl": "../",
+        "paths": {
+            "#root/*": ["./src/*"],
+            "#queries/*": ["./src/queries/*"],
+            "#commands/*": ["./src/commands/*"]
+        }
+    },
+    "include": ["./**/*.ts"],
+
+}
+

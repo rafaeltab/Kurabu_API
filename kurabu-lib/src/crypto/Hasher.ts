@@ -1,5 +1,10 @@
-import * as crypto from "crypto";
-import { decrypt, encrypt } from "./Encrypter";
+import * as crypto from 'crypto';
+
+import { Logger } from '../logging';
+import {
+  decrypt,
+  encrypt,
+} from './Encrypter';
 
 const digest = "sha512";
 function iters(iterations: number | undefined): number {
@@ -65,7 +70,7 @@ export async function Verify(
 
             resolve(keyA.compare(keyB) == 0);
         } catch (err) {
-            console.log("Maybe wrong key was used for Verifyieng :/");
+            Logger.Info("Maybe wrong key was used for Verifyieng :/");
             resolve(false);
         }
     });

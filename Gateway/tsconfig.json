@@ -14,9 +14,11 @@
         "typeRoots": ["node_modules/@types"],
         "baseUrl": "./src",
         "paths": {
-            "#root/*": ["./*"]
+            "#root/*": ["./*"],
+            "#queries/*": ["./queries/*"],
+            "#commands/*": ["./commands/*"]
         }
     },
-    "include": ["./src/**/*.ts"],
+    "include": ["./src/**/*.ts", "../kurabu-lib/src/Requests/KurabuServer.ts"],
     "exclude": ["./src/public/", "./tests/"]
 }
