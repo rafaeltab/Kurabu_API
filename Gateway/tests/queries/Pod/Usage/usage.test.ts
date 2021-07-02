@@ -1,5 +1,5 @@
-import { IQueryResultStatus } from '#queries/IQuery';
-import { PodUsageQueryHandler } from '#queries/Pod/Usage/PodUsageQueryHandler';
+import { IQueryResultStatus } from '#gqueries/IQuery';
+import { PodUsageQueryHandler } from '#gqueries/Pod/Usage/PodUsageQueryHandler';
 import { expect } from 'chai';
 
 export function Usage() {

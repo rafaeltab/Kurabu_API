@@ -1,4 +1,4 @@
-import version from '#root/version';
+import version from '#groot/version';
 import {
   Request,
   Response,

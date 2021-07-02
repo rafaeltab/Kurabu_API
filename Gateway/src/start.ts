@@ -15,14 +15,22 @@ import {
 } from 'kurabu-lib';
 
 import controllers from './controllers';
+//Setup usage capturing
+import { startRecording } from './services/UsageService/Usage';
 
 config();
+
+//Setup Logger
 var logger = new ConsoleLogger();
 Logger.setLogger(logger);
 var container = DIContainer.getInstance();
 //var Logger = new Logging.ConsoleLogger();
 
 container.Container.registerInstance<ILogger>("ILogger", logger);
+
+startRecording(2000, (usage) => {
+    logger.Info(usage);
+});
 
 //retrieve the port from env variables
 let PORT: number = process.env.PORT ? parseInt(process.env.PORT) : 15000;

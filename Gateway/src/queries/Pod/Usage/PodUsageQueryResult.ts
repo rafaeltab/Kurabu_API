@@ -1,10 +1,5 @@
-import { IQueryResult } from "#queries/IQuery";
-
-type Usage = {
-    ramPercentage: string;
-    ramMB: number;
-    cpu: any;
-};
+import { IQueryResult } from '#gqueries/IQuery';
+import { Usage } from '#groot/services/UsageService/Usage';
 
 export class PodUsageQueryResult extends IQueryResult {
     usage!: Usage;

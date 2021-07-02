@@ -1,26 +1,27 @@
-import { autoInjectable } from "tsyringe";
-import { IQueryHandler, IQueryResultStatus } from "#queries/IQuery";
-import { PodUsageQuery } from "./PodUsageQuery";
-import { PodUsageQueryResult } from "./PodUsageQueryResult";
-import { mem, cpu } from "node-os-utils";
+import {
+  IQueryHandler,
+  IQueryResultStatus,
+} from '#gqueries/IQuery';
+import {
+  recording,
+  usage,
+} from '#groot/services/UsageService/Usage';
+import { autoInjectable } from 'tsyringe';
+
+import { PodUsageQuery } from './PodUsageQuery';
+import { PodUsageQueryResult } from './PodUsageQueryResult';
 
 @autoInjectable()
 export class PodUsageQueryHandler
     implements IQueryHandler<PodUsageQuery, PodUsageQueryResult>
 {
-    async handle(Query: PodUsageQuery): Promise<PodUsageQueryResult> {
-        var usage: any = {};
-
-        var memory = await mem.used();
-
-        usage.cpu = (await cpu.usage()) + "%";
-
-        usage.ramPercentage =
-            Math.round(
-                (memory.usedMemMb / memory.totalMemMb) * 100
-            ).toString() + "%";
-
-        usage.ramMB = memory.usedMemMb;
+    async handle(_Query: PodUsageQuery): Promise<PodUsageQueryResult> {
+        if (!recording) {
+            return {
+                usage: usage,
+                success: IQueryResultStatus.FAILURE,
+            };
+        }
 
         return {
             usage: usage,
