@@ -1,15 +1,13 @@
 FROM node:latest
 
-WORKDIR /app/
+COPY . src
 
-COPY package.json .
+RUN cd src/projects/@kurabu/gateway && npm run build
 
-RUN npm install
+RUN cp -r src/build/ app/
 
-COPY . .
+RUN rm -rf src
 
-RUN npm run test
+WORKDIR app/ts/projects/@kurabu/gateway
 
-RUN npm run build
-
-ENTRYPOINT [ "npm run start" ]
+ENTRYPOINT npm run starthere

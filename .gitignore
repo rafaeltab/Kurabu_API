@@ -351,3 +351,7 @@ MigrationBackup/
 .env
 dist/
 build/
+
+*.crt
+*.key
+.env

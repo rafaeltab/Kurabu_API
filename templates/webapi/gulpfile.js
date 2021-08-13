@@ -6,7 +6,7 @@ var path = require("path");
 var chug = require("gulp-chug");
 var merge = require("merge-stream");
 
-const PROD_DEST = "../../../build/ts/projects/@kurabu/gateway";
+const PROD_DEST = "../../../build/ts/projects/@kurabu/project-template";
 const BUILD_FOLDER = "../../../build/ts";
 
 gulp.task("default", function () {
