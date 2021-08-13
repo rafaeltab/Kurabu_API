@@ -1,23 +1,28 @@
 {
     "compilerOptions": {
-        "module": "commonjs",
+        "baseUrl": ".",
+        "composite": true,
+        "declaration": true,
+        "declarationMap": true,
+        "target": "ES6",
         "strict": true,
-        "outDir": "build",
+        "module": "CommonJS",
         "removeComments": true,
         "experimentalDecorators": true,
-        "target": "es6",
         "emitDecoratorMetadata": true,
-        "moduleResolution": "node",
+        "moduleResolution": "Node",
         "importHelpers": true,
         "sourceMap": true,
         "types": ["node", "mocha"],
-        "typeRoots": ["../node_modules/@types"],
-        "baseUrl": "./",
+        "outDir": "build",
         "paths": {
-            "#groot/*": ["./Gateway/src/*"],
-            "#gqueries/*": ["./Gateway/src/queries/*"],
-            "#gcommands/*": ["./Gateway/src/commands/*"]
-        }
+            "gateway/*": ["packages/gateway/src/*"],
+            "mediaservice/*": ["packages/mediaservice/src/*"],
+            "common/*": ["packages/common/src/*"],
+            "gateway": ["packages/gateway/src"],
+            "mediaservice": ["packages/mediaservice/src"],
+            "common": ["packages/common/src"]
+        },
     },
-    "include": ["./**/*.ts"]
+    "exclude": ["**/tests/**/*.ts"]
 }
