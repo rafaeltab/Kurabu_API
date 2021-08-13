@@ -3,6 +3,7 @@ import "reflect-metadata";
 import { config } from 'dotenv';
 //import { Logger } from "@overnightjs/logger";
 import * as fs from 'fs';
+import * as path from 'path';
 //Do some imports
 import {
   ConsoleLogger,
@@ -42,8 +43,8 @@ if (PORT === 15000) {
 }
 
 var certs = {
-    key: fs.readFileSync(`${__dirname}/certs/tls.key`),
-    cert: fs.readFileSync(`${__dirname}/certs/tls.crt`),
+    key: fs.readFileSync(path.join(__dirname, "..", "static/certs/tls.key")),
+    cert: fs.readFileSync(path.join(__dirname, "..", "static/certs/tls.crt")),
 };
 
 //start the server

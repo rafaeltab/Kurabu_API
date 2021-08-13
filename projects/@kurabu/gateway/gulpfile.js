@@ -7,11 +7,12 @@ var chug = require('gulp-chug')
 var merge = require('merge-stream');
 
 const PROD_DEST = '../../../build/ts/projects/@kurabu/gateway';
+const BUILD_FOLDER = '../../../build/ts';
 
 gulp.task('default', function () {
     var gulps = []
     gulps.push(
-        gulp.src(['./package.json'])
+        gulp.src(['./package.json', './tsconfig.json'])
         .pipe(gulp.dest(PROD_DEST))
         .pipe(install({
             args: ['--production']
@@ -19,9 +20,14 @@ gulp.task('default', function () {
     );
 
     gulps.push(
-        gulp.src(['./tsconfig.json'])
-        .pipe(gulp.dest(PROD_DEST))
-    );
+        gulp.src(['static/**/*'])
+        .pipe(gulp.dest(PROD_DEST + "/static"))
+    )
+
+    gulps.push(
+        gulp.src(['../../../config/tsconfig.base.json'])
+        .pipe(gulp.dest(BUILD_FOLDER + "/config"))
+    );     
 
     for (let ref = 0; ref < tsconfig.references.length; ref++) {
         const reference = tsconfig.references[ref].path;
