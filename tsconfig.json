@@ -16,12 +16,12 @@
         "types": ["node", "mocha"],
         "outDir": "build",
         "paths": {
-            "gateway/*": ["packages/gateway/src/*"],
-            "mediaservice/*": ["packages/mediaservice/src/*"],
-            "common/*": ["packages/common/src/*"],
-            "gateway": ["packages/gateway/src"],
-            "mediaservice": ["packages/mediaservice/src"],
-            "common": ["packages/common/src"]
+            "gateway/*": ["projects/gateway/src/*"],
+            "mediaservice/*": ["projects/mediaservice/src/*"],
+            "common/*": ["projects/common/src/*"],
+            "gateway": ["projects/gateway/src"],
+            "mediaservice": ["projects/mediaservice/src"],
+            "common": ["projects/common/src"]
         },
     },
     "exclude": ["**/tests/**/*.ts"]
