@@ -1,4 +1,4 @@
-import { DIContainer } from '@kurabu/common';
+import { DIContainer } from '@kurabu/common/index';
 
 import { PodUsageController } from './Pod/Usage/PodUsageController';
 import { VersionController } from './VersionController/VersionController';

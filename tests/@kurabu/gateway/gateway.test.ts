@@ -1,6 +1,6 @@
 import 'reflect-metadata';
 
-import { startRecording } from '#groot/services/UsageService/Usage';
+import { startRecording } from '@kurabu/gateway/services/UsageService/Usage';
 
 import { Commands } from './commands/commands.test';
 import { Queries } from './queries/queries.test';

@@ -1,5 +1,5 @@
-import { IQueryResultStatus } from '#queries/IQuery';
-import { PodUsageQueryHandler } from '#queries/Pod/Usage/PodUsageQueryHandler';
+import { IQueryResultStatus } from '@kurabu/gateway/queries/IQuery';
+import { PodUsageQueryHandler } from '@kurabu/gateway/queries/Pod/Usage/PodUsageQueryHandler';
 import { expect } from 'chai';
 
 export function Usage() {

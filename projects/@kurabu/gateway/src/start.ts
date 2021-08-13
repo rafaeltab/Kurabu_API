@@ -1,3 +1,4 @@
+import "reflect-metadata";
 //load .env file
 import { config } from 'dotenv';
 //import { Logger } from "@overnightjs/logger";
@@ -9,8 +10,7 @@ import {
   Requests,
   DIContainer,
   ILogger,
-} from '@kurabu/common';
-
+} from '@kurabu/common/index';
 import controllers from './controllers';
 //Setup usage capturing
 import { startRecording } from './services/UsageService/Usage';

@@ -1,14 +1,14 @@
 {
     "package": "./package.json",
-    "spec": "**/tests/**/*.ts",
-    "files": "**/tests/**/*.ts",
+    "spec": "tests/**/*.ts",
+    "files": "tests/**/*.ts",
     "require": [
         "tsconfig-paths/register",
         "ts-node/register"
     ],
     "watch-files": [
         "./**/src/**/*.ts",
-        "./**/tests/**/*.ts"
+        "./tests/**/*.ts"
     ],
     "recursive": true
 }

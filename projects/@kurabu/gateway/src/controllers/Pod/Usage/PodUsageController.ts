@@ -8,8 +8,8 @@ import {
 import {
   Decorators,
   Requests,
-} from '@kurabu/common';
-import { injectable } from 'tsyringe';
+} from '@kurabu/common/index';
+import { autoInjectable, injectable } from 'tsyringe';
 
 import {
   Controller,
@@ -19,7 +19,7 @@ import {
 import * as Options from './PodUsageControllerOptions';
 
 @Controller(Options.ControllerPath)
-@injectable()
+@autoInjectable()
 export class PodUsageController {
     constructor(private _podUsageQuery: PodUsageQueryHandler) {}
 

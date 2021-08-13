@@ -6,8 +6,8 @@
     "gate": "cd Gateway && npm run start-dev",
     "auth": "cd AuthService && npm run start-dev",
     "media": "cd MediaService && npm run start-dev",
-    "test": "set TS_NODE_PROJECT=tsconfig.json&& mocha --config .mocharc.json",
-    "build": "tsc -b ./tsconfig.packages.json"
+    "test": "set TS_NODE_PROJECT=tests/tsconfig.json&& mocha --config .mocharc.json",
+    "build": "tsc -b ./config/tsconfig.projectreferences.json"
   },
   "repository": {
     "type": "git",
@@ -21,7 +21,10 @@
   },
   "homepage": "https://github.com/rafaeltab/Kurabu_API#readme",
   "dependencies": {
+    "@types/chai": "^4.2.21",
     "@types/node": "^15.12.4",
+    "chai": "^4.3.4",
+    "reflect-metadata": "^0.1.13",
     "ts-node": "^10.0.0",
     "tsconfig-paths": "^3.9.0",
     "typescript": "^4.3.4"

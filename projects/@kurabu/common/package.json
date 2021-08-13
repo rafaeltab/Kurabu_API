@@ -8,6 +8,7 @@
     "/dist"
   ],
   "scripts": {
+    "build": "tsc -b && gulp",
     "removedist": "rmdir /s /q \"./dist\" ",
     "publishnpm": "npm run removedist && tsc && grunt bump && npm publish"
   },
@@ -21,11 +22,15 @@
     "@types/node": "^15.12.3",
     "@types/node-fetch": "^2.5.10",
     "express": "^4.17.1",
+    "gulp-chug": "^0.5.1",
+    "merge-stream": "^2.0.0",
     "node-fetch": "^2.6.1",
     "tsyringe": "^4.5.0"
   },
   "devDependencies": {
     "grunt": "^1.4.1",
-    "grunt-bump": "^0.8.0"
+    "grunt-bump": "^0.8.0",
+    "gulp": "^4.0.2",
+    "gulp-install": "^1.1.0"
   }
 }

@@ -6,8 +6,8 @@ import {
 import {
   Decorators,
   Requests,
-} from '@kurabu/common';
-import { injectable } from 'tsyringe';
+} from '@kurabu/common/index';
+import { autoInjectable, injectable } from 'tsyringe';
 
 import {
   Controller,
@@ -17,7 +17,7 @@ import {
 import * as Options from './VersionControllerOptions';
 
 @Controller(Options.ControllerPath)
-@injectable()
+@autoInjectable()
 export class VersionController {
     @Get(Options.ControllerName)
     @Decorators.RequestHandler()
