@@ -16,13 +16,11 @@
         "types": ["node", "mocha"],
         "outDir": "build",
         "paths": {
-            "gateway/*": ["projects/gateway/src/*"],
-            "mediaservice/*": ["projects/mediaservice/src/*"],
-            "common/*": ["projects/common/src/*"],
-            "gateway": ["projects/gateway/src"],
-            "mediaservice": ["projects/mediaservice/src"],
-            "common": ["projects/common/src"]
+            "@kurabu/gateway/*": ["./projects/@kurabu/gateway/src/*"],
+            "@kurabu/common/*": ["./projects/@kurabu/common/src/*"],
+            "@kurabu/gateway": ["./projects/@kurabu/gateway/src"],
+            "@kurabu/common": ["./projects/@kurabu/common/src"]
         },
     },
-    "exclude": ["**/tests/**/*.ts"]
+    "exclude": ["**/tests/**/*.ts", "**/*.d.ts"]
 }

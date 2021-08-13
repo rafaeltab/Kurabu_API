@@ -1,13 +1,9 @@
 {
-    "extends": "../../tsconfig.json",
+    "extends": "../../../tsconfig.json",
     "compilerOptions": {
         "outDir": "build",
         "typeRoots": ["node_modules/@types"],
-        "baseUrl": ".",
-        "paths": {
-            "#queries/*": ["src/queries/*"],
-            "#root/*": ["src/*"]
-        }
+        "baseUrl": "."
     },
     "references": [
         {

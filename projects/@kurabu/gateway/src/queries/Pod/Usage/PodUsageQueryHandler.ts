@@ -1,11 +1,11 @@
 import {
   IQueryHandler,
   IQueryResultStatus,
-} from 'gateway/queries/IQuery';
+} from '@kurabu/gateway/queries/IQuery';
 import {
   recording,
   usage,
-} from 'gateway/services/UsageService/Usage';
+} from '@kurabu/gateway/services/UsageService/Usage';
 import { autoInjectable } from 'tsyringe';
 
 import { PodUsageQuery } from './PodUsageQuery';

@@ -2,13 +2,10 @@
     "files": [],
     "references": [
         {
-            "path": "./packages/common"
+            "path": "./projects/@kurabu/common"
         },
         {
-            "path": "./packages/web"
-        },
-        {
-            "path": "./packages/api"
+            "path": "./projects/@kurabu/gateway"
         }
     ]
 }

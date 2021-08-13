@@ -9,7 +9,7 @@ import {
   Requests,
   DIContainer,
   ILogger,
-} from 'common';
+} from '@kurabu/common';
 
 import controllers from './controllers';
 //Setup usage capturing

@@ -7,7 +7,7 @@
     "auth": "cd AuthService && npm run start-dev",
     "media": "cd MediaService && npm run start-dev",
     "test": "set TS_NODE_PROJECT=tsconfig.json&& mocha --config .mocharc.json",
-    "buildall": "tsc -b ./tsconfig.json"
+    "build": "tsc -b ./tsconfig.packages.json"
   },
   "repository": {
     "type": "git",

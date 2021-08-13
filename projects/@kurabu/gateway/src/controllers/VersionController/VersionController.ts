@@ -1,6 +1,4 @@
-import {
-  PodUsageQueryHandler,
-} from 'gateway/queries/Pod/Usage/PodUsageQueryHandler';
+import version from '@kurabu/gateway/version';
 import {
   Request,
   Response,
@@ -8,7 +6,7 @@ import {
 import {
   Decorators,
   Requests,
-} from 'common';
+} from '@kurabu/common';
 import { injectable } from 'tsyringe';
 
 import {
@@ -16,22 +14,18 @@ import {
   Get,
 } from '@overnightjs/core';
 
-import * as Options from './PodUsageControllerOptions';
+import * as Options from './VersionControllerOptions';
 
 @Controller(Options.ControllerPath)
 @injectable()
-export class PodUsageController {
-    constructor(private _podUsageQuery: PodUsageQueryHandler) {}
-
+export class VersionController {
     @Get(Options.ControllerName)
     @Decorators.RequestHandler()
     @Decorators.LogArg()
     private async get(req: Request, res: Response, arg: Options.params) {
-        var result = await this._podUsageQuery.handle({});
-
         return {
             status: Requests.SUCCESS_STATUS,
-            message: result.usage,
+            message: version.version,
         };
     }
 }
