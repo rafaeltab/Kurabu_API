@@ -4,6 +4,7 @@ import { config } from "dotenv";
 //import { Logger } from "@overnightjs/logger";
 import * as fs from "fs";
 import * as path from "path";
+import * as tsyringe from "tsyringe";
 //Do some imports
 import {
   ConsoleLogger,
@@ -12,7 +13,7 @@ import {
   DIContainer,
   ILogger,
 } from "@kurabu/common/index";
-import controllers from "./controllers";
+
 //Setup usage capturing
 import { startRecording } from "./services/UsageService/Usage";
 
@@ -21,8 +22,11 @@ config();
 //Setup Logger
 var logger = new ConsoleLogger();
 Logger.setLogger(logger);
-var container = DIContainer.getInstance();
+var container = DIContainer.getInstance(tsyringe.container);
 //var Logger = new Logging.ConsoleLogger();
+
+import controllers from "./controllers";
+import { KurabuServer } from "./common/KurabuServer";
 
 container.Container.registerInstance<ILogger>("ILogger", logger);
 
@@ -48,6 +52,7 @@ var certs = {
 };
 
 //start the server
-const server = new Requests.KurabuServer(controllers, certs);
+const server = new KurabuServer(controllers, certs);
 //server.start(PORT);
 server.startHTTPS(PORT);
+var e = 0;
