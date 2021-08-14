@@ -4,10 +4,11 @@
         "baseUrl": "../../../",
         "rootDir": "../../../",
         "outDir": "../../../build/ts",
-        "resolveJsonModule": true
+        "resolveJsonModule": true,
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true
     },
     "include": [
-        "src/**/*"
-    ],
+        "src/**/*" ],
     "references": []
 }

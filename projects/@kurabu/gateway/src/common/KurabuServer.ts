@@ -10,7 +10,7 @@ import {
 
 import { Server } from '@overnightjs/core';
 
-import { Logger } from '../logging';
+import { Logger } from '@kurabu/common/logging';
 
 type Certs = {
     key: Buffer;

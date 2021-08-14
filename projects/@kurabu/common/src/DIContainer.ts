@@ -13,11 +13,11 @@ export default class DIContainer {
     }
 
     private static _instance: DIContainer;
-    public static getInstance(mock?: any) {
-        if (!this._instance && mock === undefined) {
+    public static getInstance(container?: any) {
+        if (!this._instance && container === undefined) {
             this._instance = new DIContainer();
-        } else if (mock !== undefined) {
-            this._instance = new DIContainer(mock);
+        } else if (container !== undefined) {
+            this._instance = new DIContainer(container);
         }
         return this._instance;
     }
